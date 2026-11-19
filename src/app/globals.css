@@ -111,3 +111,21 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Hide Netlify injected badge / HUD frames */
+#nl-badge-frame,
+#nl-hud-frame,
+[id*="netlify" i],
+[class*="netlify" i],
+[data-netlify-badge],
+[data-netlify-deploy-preview],
+iframe[src*="netlify" i],
+a[href*="netlify.com" i][style*="fixed"],
+a[href*="utm_source=netlify" i] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
