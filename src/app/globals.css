@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-poppins), sans-serif;
+  --color-obsidian: #0a0c0c;
+  --color-spruce: #0c1515;
+  --color-spruce-elevated: #111d1d;
+  --color-spruce-border: #1a2929;
+  --color-pure-black: #000000;
+  --color-pure-white: #ffffff;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-family: var(--font-poppins), sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  html,
+  body,
+  button,
+  input,
+  textarea,
+  select,
+  pre,
+  code,
+  kbd {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.carousel-perspective {
+  perspective: 1200px;
+}
+
+/* Editorial monochrome portrait framing for white-backdrop studio headshot */
+.portrait-editorial-matte {
+  filter: grayscale(100%) contrast(1.08) brightness(0.95);
+  transition: filter 420ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portrait-editorial-matte:hover {
+  filter: grayscale(20%) contrast(1.04) brightness(0.98);
+}
+
+/* Subtle architectural grid lines using strict palette */
+.bg-architectural-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+/* Subtle marquee ticker for institutional ribbon */
+@keyframes marquee-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-drift {
+  display: flex;
+  width: max-content;
+  animation: marquee-drift 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .animate-marquee-drift {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
