@@ -44,8 +44,8 @@ export function AboutSection() {
               </h2>
             </div>
 
-            {/* Centered Studio Portrait Plate directly under heading on tablet & desktop; mobile unchanged */}
-            <figure className="w-full max-w-[280px] overflow-hidden rounded-2xl border border-white/12 bg-[#0c1515] p-3 sm:mx-auto sm:max-w-[310px] sm:p-3.5 lg:max-w-[310px]">
+            {/* Centered Studio Portrait Plate in remaining column space on desktop; mobile unchanged */}
+            <figure className="w-full max-w-[280px] overflow-hidden rounded-2xl border border-white/12 bg-[#0c1515] p-3 sm:mx-auto sm:max-w-[310px] sm:p-3.5 lg:mx-auto lg:my-auto lg:max-w-[310px]">
               <div className="overflow-hidden rounded-xl bg-white">
                 {!headshotFailed ? (
                   <img
